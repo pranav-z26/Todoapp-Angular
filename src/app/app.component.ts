@@ -9,20 +9,23 @@ import { TodoService } from './services/todo.service';
 })
 export class AppComponent {
   title = 'Todo Manager';
+  listTodo: Array<Todo> = [];
   todo:Todo = new Todo();
 
   constructor(private todoService: TodoService) {
-    console.log(this.listTodo);
+    // console.log(this.listTodo);
+    todoService.getTodos().subscribe(data => this.listTodo = [...data])
   }
 
-  listTodo: Array<Todo> = [];
 
   addTodo() {
     console.log('Inside addTodo method');
     this.listTodo.push(this.todo);
-    this.todo = new Todo();
-    this.todoService.getData()
 
+    this.todoService.addTodo(this.todo)
+    .subscribe(data => console.log(data))
+    this.todo = new Todo();
+    // this.todoService.getData()
   }
 
 }
