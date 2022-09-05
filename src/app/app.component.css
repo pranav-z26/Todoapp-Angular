@@ -1,16 +1,37 @@
-#todoTaker{
-    width: 50vw;
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+#todoTaker {
+    width: 30vw;
     margin: auto;
     margin-top: 25px;
 }
 
-#todoViewer{
+#todoViewer {
     margin-top: 1em;
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
-#todocard{
-    display: inline-flex;
+#todocard {
+    /* display: inline-flex; */
     width: 20vw;
     margin-left: 1em;
     margin-top: 1em;
+    /* border:1px solid rgb(54, 162, 225); */
+    background-image: linear-gradient(to right, #f5f7fa, #bfe9ff);
+    font-family: 'Sriracha', cursive;
+
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.example-full-width{
+    margin-left: 10px;
+}
+
+#heading{
+    font-size: 25px;
+    font-family: 'Sriracha', cursive;
 }
